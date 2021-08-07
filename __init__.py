@@ -140,6 +140,8 @@ def _async_use_default_interface(adapters: list[Adapter]) -> bool:
 async def async_setup(hass: HomeAssistant, config: dict) -> bool:
     """Set up Zeroconf and make Home Assistant discoverable."""
     zc_args: dict = {}
+    _LOGGER.warning("zeroconf async_setup")
+
 
     adapters = await network.async_get_adapters(hass)
     if _async_use_default_interface(adapters):
@@ -162,6 +164,8 @@ async def async_setup(hass: HomeAssistant, config: dict) -> bool:
     zc_args["ip_version"] = IPVersion.V4Only
 #    else:
 #        zc_args["ip_version"] = IPVersion.All
+
+    _LOGGER.warning("zeroconf zc_args: %s")
 
     aio_zc = await _async_get_instance(hass, **zc_args)
     zeroconf = cast(HaZeroconf, aio_zc.zeroconf)
