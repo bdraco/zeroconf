@@ -162,8 +162,8 @@ async def async_setup(hass: HomeAssistant, config: dict) -> bool:
     if not any(adapter["enabled"] and adapter["ipv6"] for adapter in adapters):
         ipv6 = False
         zc_args["ip_version"] = IPVersion.V4Only
-    else:
-        zc_args["ip_version"] = IPVersion.All
+#    else:
+#        zc_args["ip_version"] = IPVersion.All
 
     aio_zc = await _async_get_instance(hass, **zc_args)
     zeroconf = cast(HaZeroconf, aio_zc.zeroconf)
