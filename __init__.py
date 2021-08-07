@@ -142,7 +142,6 @@ async def async_setup(hass: HomeAssistant, config: dict) -> bool:
     zc_args: dict = {}
     _LOGGER.warning("zeroconf async_setup")
 
-
     adapters = await network.async_get_adapters(hass)
     if _async_use_default_interface(adapters):
         zc_args["interfaces"] = InterfaceChoice.Default
