@@ -1,5 +1,5 @@
 {
-  "verion": "0.0.1",
+  "version": "0.0.1",
   "domain": "zeroconf",
   "name": "Zero-configuration networking (zeroconf)",
   "documentation": "https://www.home-assistant.io/integrations/zeroconf",
