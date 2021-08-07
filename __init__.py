@@ -158,10 +158,8 @@ async def async_setup(hass: HomeAssistant, config: dict) -> bool:
 #            if adapter["ipv6"] and adapter["index"] not in interfaces:
 #                interfaces.append(adapter["index"])
 
-    ipv6 = True
-    if not any(adapter["enabled"] and adapter["ipv6"] for adapter in adapters):
-        ipv6 = False
-        zc_args["ip_version"] = IPVersion.V4Only
+    ipv6 = False
+    zc_args["ip_version"] = IPVersion.V4Only
 #    else:
 #        zc_args["ip_version"] = IPVersion.All
 
