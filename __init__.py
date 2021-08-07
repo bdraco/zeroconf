@@ -165,7 +165,7 @@ async def async_setup(hass: HomeAssistant, config: dict) -> bool:
         zc_args["ip_version"] = IPVersion.V4Only
     else:
         zc_args["ip_version"] = IPVersion.All
-    _LOGGER.warning("zeroconf zc_args: %s")
+    _LOGGER.warning("zeroconf zc_args: %s", zc_args)
 
     aio_zc = await _async_get_instance(hass, **zc_args)
     zeroconf = cast(HaZeroconf, aio_zc.zeroconf)
