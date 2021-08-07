@@ -157,8 +157,8 @@ async def async_setup(hass: HomeAssistant, config: dict) -> bool:
                     for ipv4 in ipv4s
                     if not ipaddress.ip_address(ipv4["address"]).is_loopback
                 )
-#            if adapter["ipv6"] and adapter["index"] not in interfaces:
-#                interfaces.append(adapter["index"])
+            if adapter["ipv6"] and adapter["index"] not in interfaces:
+                interfaces.append(adapter["index"])
 
     ipv6 = True
     if not any(adapter["enabled"] and adapter["ipv6"] for adapter in adapters):
